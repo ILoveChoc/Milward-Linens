@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+
+.sub_images {
+    height: 550px;
+    margin-bottom: 20px;
+    align-items: normal;
+}
+
+.main_image_container {
+    margin-bottom: 100px;
+}
+
+.sub_image_container {
+    margin-bottom: 100px;
+    flex-wrap: nowrap;
+}
+
+.image1_container, .image2_container, .image3_container {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image_text {
+    text-align: center;
+    color: gray;
+    font-family: Raleway;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+}
+
+@media (max-width: 800px) {
+    .sub_image_container {
+        flex-direction: column;
+        width: calc(100% - 40px);
+        max-width: 1250px;
+    }
+
+    .sub_images img {
+        width: 100%;
+        height: auto;
+        object-fit: cover; 
+        max-height: fit-content;
+        margin-top: 30px;
+    }
+
+    .main_image {
+        height: auto;
+    }
+
+}
+
+
+</style>
+
+
+<body>
+    <header>
+        <div class="header">
+            <div class="nav_bar">
+                <div class="navigation"><a href="about.html">about</a></div>
+                <div class="navigation"><a href="collection.html">collection</a></div>
+                <div class="navigation"><a href="contact.html">contact</a></div>
+                <button id="close-menu" onclick="toggleMenu()">X</button>
+            </div>
+    
+            <div class="logo">
+                <div>
+                    <a href="index.html"><img src="images/logo.png" alt="company logo" class="logo_image"></a>
+                </div>
+            </div>
+    
+            <button id="hamburger-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+            </button>
+    
+            <div class="right_side_nav_bar"></div>
+    
+        </div>
+    </header>
+
+    <section>
+        <div class="body_container">
+            
+            <div class="text_container">
+                <div class="collection_text"><h4>The Collection</h4></div>
+            </div>
+            
+            <div class="sub_image_container">
+                <div class="image1_container">
+                    <div class="sub_images image1"><a href="./bath_sheet.html"><img src="./images/image15.jpg" alt="Towel on door"></a></div>
+                    <div class="image_text">The Millward Bath Sheet</div>
+                </div>
+                <div class="image2_container">
+                    <div class="sub_images image2"><a href="./bath_towel.html"><img src="./images/image7.jpg" alt="White towels"></a></div>
+                    <div class="image_text">The Millward Bath Towel</div>
+                </div>
+                <div class="image3_container">
+                    <div class="sub_images image3"><a href="./hand_towel.html"><img src="./images/image23.jpg" alt="Blue towel"></a></div>
+                    <div class="image_text">The Millward Hand Towel</div>
+                </div>
+            </div>
+
+            <div class="main_image_container">
+                <div class="main_image_item">
+                    <img src="./images/image84.jpg" alt="Three white towels" class="main_image">
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <div class="footer_nav_bar">
+                <div class="navigation"><a href="about.html">about</a></div>
+                <div class="navigation"><a href="collection.html">collection</a></div>
+                <div class="navigation"><a href="contact.html">contact</a></div>
+                <div class="navigation"><a href="returns.html">returns</a></div>
+                <div class="navigation"><a href="privacy_policy.html">privacy policy</a></div>
+                <div class="navigation"><a href="terms.html">terms & conditions</a></div>
+            </div>
+            <div class="email_sign_up_container">
+                <div><input type="email" id="emailInput" placeholder="Email Address"></div>
+                <div><button id="signUpButton" onclick="sendEmail()">Sign Up</button></div>
+                <div id="footerMessageStatus" style="display: none; color: green;"></div>
+            </div>
+            <div>
+                <a href="https://www.facebook.com/people/Milward-Linens/61554012852743/"><button class="facebookLink">f</button></a>
+            </div>
+            
+        </div>
+        <div class="copyright_container">
+            <div><p class="copyright">© 2023 Milward Linens</p></div>
+        </div>
+    
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

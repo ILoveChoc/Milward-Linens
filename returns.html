@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Returns</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    .about_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 850px;
+        margin: 0 auto;
+        width: calc(100% - 40px);
+        margin-bottom: 50px;
+    }
+
+    h4 {
+        font-size: x-large;
+    }
+
+    .about_text {
+        text-align: center;
+        color: gray;
+        font-family: Raleway;
+        font-size: 1.25rem;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    .sub_image_container {
+        margin-bottom: 100px;
+    }
+
+    .main_image_container {
+        margin-bottom: 20px;
+    }
+
+    p, li {
+        text-align: left;
+        line-height: 1.8;
+    }
+
+
+</style>
+
+
+<body>
+    <header>
+        <div class="header">
+            <div class="nav_bar">
+                <div class="navigation"><a href="about.html">about</a></div>
+                <div class="navigation"><a href="collection.html">collection</a></div>
+                <div class="navigation"><a href="contact.html">contact</a></div>
+                <button id="close-menu" onclick="toggleMenu()">X</button>
+            </div>
+    
+            <div class="logo">
+                <div>
+                    <a href="index.html"><img src="images/logo.png" alt="company logo" class="logo_image"></a>
+                </div>
+            </div>
+    
+            <button id="hamburger-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+            </button>
+    
+            <div class="right_side_nav_bar"></div>
+    
+        </div>
+    </header>
+
+    <section>
+        <div class="body_container">
+            <div class="about_container">
+                <div class="about_header_container">
+                    <div class="about_header"><h4>Milward Linens Returns Policy</h4></div>
+                </div>    
+                <div class="about_text">
+                    <p>In addition to your Statutory Rights, the Milward Linens Returns Policy sets out how you can return your purchase from a warehouse sale because you:</p>
+                    <ul>
+                        <li>Changed your mind; or</li>
+                        <li>Purchased an incorrect size and the product doesn't fit</li>
+                    </ul>
+                    <p>You can return your purchase for an exchange or refund under this Returns Policy if:</p>
+                    <ul>
+                        <li>The product is returned within the 30 day returns timeframe</li>
+                        <li>You return the product in its original condition, unused and with the tags attached if the tags were provided by Milward Linens </li>
+                        <li>You supply Milward Linens receipt/tax invoice or online order confirmation email as proof of purchase</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <div class="footer_nav_bar">
+                <div class="navigation"><a href="about.html">about</a></div>
+                <div class="navigation"><a href="collection.html">collection</a></div>
+                <div class="navigation"><a href="contact.html">contact</a></div>
+                <div class="navigation"><a href="returns.html">returns</a></div>
+                <div class="navigation"><a href="privacy_policy.html">privacy policy</a></div>
+                <div class="navigation"><a href="terms.html">terms & conditions</a></div>
+            </div>
+            <div class="email_sign_up_container">
+                <div><input type="email" id="emailInput" placeholder="Email Address"></div>
+                <div><button id="signUpButton" onclick="sendEmail()">Sign Up</button></div>
+                <div id="footerMessageStatus" style="display: none; color: green;"></div>
+            </div>
+            <div>
+                <a href="https://www.facebook.com/people/Milward-Linens/61554012852743/"><button class="facebookLink">f</button></a>
+            </div>
+            
+        </div>
+        <div class="copyright_container">
+            <div><p class="copyright">© 2023 Milward Linens</p></div>
+        </div>
+    
+    </footer>
+    
+    <script src="index.js"></script>
+</body>
+</html>

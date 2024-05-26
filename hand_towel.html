@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Towel</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<style>
+
+.content_container {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    max-width: 1250px;
+    margin: 0 auto;
+    width: calc(100% - 40px);
+    margin-bottom: 100px;
+    margin-top: 100px;
+    overflow: hidden;
+    height: 70vh;
+}
+
+.left_image_container, .right_side_content_container {
+    max-width: 600px;
+    width: calc(100% - 40px);
+    justify-content: flex-start;
+}
+
+/* .left_image_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+} */
+
+h3 {
+    text-align: left;
+    padding: 0;
+}
+
+h5 {
+    text-align: left;
+    padding: 30px 0px;
+    margin: 0;
+    font-size: 25px;
+    font-weight: 550;
+}
+
+.information_text {
+    margin-bottom: 40px;
+}
+
+p {
+    color: gray;
+}
+
+.made_in {
+    font-style: italic;
+    padding-top: 10px;
+}
+
+.toggle-button {
+    cursor: pointer;
+}
+
+.specs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#content-1, #content-2, #content-3 {
+    margin-right: 150px;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px; 
+    overflow: hidden;
+}
+
+.carousel .slide img {
+    width: 100%; 
+    height: 100%;
+    min-height: 650px;
+    object-fit: cover; 
+    object-position: center; 
+}
+
+.slides .slide {
+    display: none;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: lightgray;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    z-index: 100;
+}
+
+button.prev { left: 0px; }
+button.next { right: 0px; }
+
+.prev, .next {
+    font-size: x-large;
+}
+
+@media (max-width: 800px) {
+    .content_container {
+        flex-direction: column;
+        width: calc(100% - 40px);
+        height: auto;
+        margin-bottom: 50px;
+        overflow: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left_image_container, .right_side_content_container {
+        width: 100%;
+        height: auto;
+    }
+
+    .left_image_container, .slide {
+        height: 90vh;
+    }
+
+}
+
+</style>
+
+<body>
+
+<header>
+    <div class="header">
+        <div class="nav_bar">
+            <div class="navigation"><a href="about.html">about</a></div>
+            <div class="navigation"><a href="collection.html">collection</a></div>
+            <div class="navigation"><a href="contact.html">contact</a></div>
+            <button id="close-menu" onclick="toggleMenu()">X</button>
+        </div>
+
+        <div class="logo">
+            <div>
+                <a href="index.html"><img src="images/logo.png" alt="company logo" class="logo_image"></a>
+            </div>
+        </div>
+
+        <button id="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="right_side_nav_bar"></div>
+
+    </div>
+</header>
+
+    <div class="content_container">
+        <div class="carousel">
+            <div class="slides">
+                <div class="slide"><img src="./images/image15.jpg" alt="Image 1"></div>
+                <div class="slide"><img src="./images/image41.jpg" alt="Image 2"></div>
+                <div class="slide"><img src="./images/image65.jpg" alt="Image 3"></div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+        <div class="right_side_content_container">
+            <div class="information_text">
+                <h3>The Milward Hand Towel</h3>
+                <p>Luxuriously soft, the Milward Hand Towel is crafted from plush 700 GSM 100% Zero Twist Terry Cotton.</p>
+                <p class="made_in">Made in India</p>
+            </div>
+            <div class="product_specs">
+                <hr>
+                <div class="specs">
+                    <div><h5>Product Dimensions</h5></div>
+                    <div><span class="toggle-button" data-target="content-1" onclick="toggleContent(this)">+</span></div>
+                </div>
+                <div id="content-1" class="toggle-content" style="display: none;">
+                    <p>43 x 65cm</p>
+                </div>
+                
+                <hr>
+                <div class="specs">
+                    <div><h5>Product Info</h5></div>
+                    <div><span class="toggle-button" data-target="content-2" onclick="toggleContent(this)">+</span></div>
+                </div>
+                <div id="content-2" class="toggle-content" style="display: none;">
+                    <p>Indulge in luxury with the Milward Hand Towel. Crafted from plush 700 GSM 100% Zero Twist Terry Cotton, it offers unparalleled softness and superior absorbency.</p>
+                </div>
+
+                <hr>
+                <div class="specs">
+                    <div><h5>Care Instructions</h5></div>
+                    <div><span class="toggle-button" data-target="content-3" onclick="toggleContent(this)">+</span></div>
+                </div>
+                <div id="content-3" class="toggle-content" style="display: none;">
+                    <p>Warm machine wash separately before first use. Wash with like colours. Do not bleach. Warm tumble dry. Ironing not required. Do not dry clean.</p>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+
+    </div>
+
+<footer>
+    <div class="footer">
+        <div class="footer_nav_bar">
+            <div class="navigation"><a href="about.html">about</a></div>
+            <div class="navigation"><a href="collection.html">collection</a></div>
+            <div class="navigation"><a href="contact.html">contact</a></div>
+            <div class="navigation"><a href="returns.html">returns</a></div>
+            <div class="navigation"><a href="privacy_policy.html">privacy policy</a></div>
+            <div class="navigation"><a href="terms.html">terms & conditions</a></div>
+        </div>
+        <div class="email_sign_up_container">
+            <div><input type="email" id="emailInput" placeholder="Email Address"></div>
+            <div><button id="signUpButton" onclick="sendEmail()">Sign Up</button></div>
+            <div id="footerMessageStatus" style="display: none; color: green;"></div>
+        </div>
+        <div>
+            <a href="https://www.facebook.com/people/Milward-Linens/61554012852743/"><button class="facebookLink">f</button></a>
+        </div>
+        
+    </div>
+    <div class="copyright_container">
+        <div><p class="copyright">© 2023 Milward Linens</p></div>
+    </div>
+
+</footer>
+
+
+
+<script src="index.js"></script>
+
+</body>
+</html>

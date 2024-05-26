@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+
+    .form_container {
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        max-width: 1250px;
+        margin: 0 auto;
+        width: calc(100% - 80px);
+        margin-bottom: 100px;
+        margin-top: 100px;
+    }
+
+    .contact_us, .contact_form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    h3 {
+        text-align: left;
+        margin: 0;
+        padding: 0;
+    }
+
+    .web_address {
+        color: #f2674a;
+    }
+
+    .contact_us .facebookLink {
+        padding: 10px 15px;
+        margin-top: 20px;
+    }
+
+    p {
+        color: gray;
+        font-family: Raleway;
+        font-size: 1.25rem;
+        font-style: normal;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+    }
+   
+    .extra_space {
+        margin-top: 35px;
+    }
+
+    .ABN {
+        margin-bottom: 20px;
+    }
+
+    .inputBox {
+        width: 100%;
+        height: 50px;
+        border: #f2674a solid;
+        margin-top: 10px;
+        margin-bottom: 25px;
+    }
+
+    .resizable {
+        min-height: 70px;
+        resize: vertical;
+        overflow: auto;
+    }
+
+    .required {
+        opacity: 0.5;
+    }
+
+    .inputBoxName, .required {
+        color: #f2674a;
+    }
+
+    .inputBoxName {
+        text-transform: uppercase;
+    }
+
+    #sendButton {
+        font-family: Raleway;
+        font-size: medium;
+        font-style: normal;
+        font-weight: 700;
+        color: white;
+        background-color: #f2674a;
+        text-align: center;
+        text-transform: uppercase;
+        padding:20px 35px;
+        border: transparent;
+        cursor: pointer;
+    }
+
+    .inputBox {
+        color: gray;
+        font-size: large;
+        line-height: 1.5;
+        letter-spacing: 0.05rem;
+        font-family: Raleway;
+    }
+
+
+    @media (max-width: 800px) {
+        .form_container {
+            flex-direction: column;
+        }
+
+    }
+
+    
+
+</style>
+
+
+<body>
+    <header>
+        <div class="header">
+            <div class="nav_bar">
+                <div class="navigation"><a href="about.html">about</a></div>
+                <div class="navigation"><a href="collection.html">collection</a></div>
+                <div class="navigation"><a href="contact.html">contact</a></div>
+                <button id="close-menu" onclick="toggleMenu()">X</button>
+            </div>
+    
+            <div class="logo">
+                <div>
+                    <a href="index.html"><img src="images/logo.png" alt="company logo" class="logo_image"></a>
+                </div>
+            </div>
+    
+            <button id="hamburger-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+            </button>
+    
+            <div class="right_side_nav_bar"></div>
+    
+        </div>
+    </header>
+
+    <div class="form_container">
+        <div class="contact_us">
+            <h3>Contact us</h3>
+            <p class="web_address extra_space">info@milwardlinens.com</p>
+            <p class="phoneNumber">+61 423 695 664</p>
+            <p class="extra_space">PO Box 333</p>
+            <p>Summer Hill, NSW 2130</p>
+            <p class="extra_space ABN">Mr Tables ABN 35 061 518 170</p>
+            <a"https://www.facebook.com/people/Milward-Linens/61554012852743/"><button class="facebookLink">f</button></a>
+        </div>
+
+        <div class="contact_form">
+            <div>
+                <span class="inputBoxName">name</span>
+                <span class="required">(required)</span>
+            </div> 
+            <div><input type="text" id="name" required class="inputBox"></div>
+
+            <div>
+                <span class="inputBoxName">email</span>
+                <span class="required">(required)</span>
+            </div> 
+            <div><input type="email" id="email" required class="inputBox"></div>
+
+            <div>
+                <span class="inputBoxName">phone</span>
+                <span class="required"></span>
+            </div> 
+            <div><input type="tel" id="phone" class="inputBox"></div>
+
+            <div>
+                <span class="inputBoxName">comment</span>
+                <span class="required">(required)</span>
+            </div> 
+            <div><textarea id="comment" class="inputBox resizable" required></textarea></div>
+                
+                <div><button id="sendButton" onclick="sendInfo()">Send</button></div>
+                <div id="messageStatus" style="display: none; color: green; margin-top: 10px;"></div>
+        </div>
+
+    </div>
+    
+
+    <footer>
+        <div class="footer">
+            <div class="footer_nav_bar">
+                <div class="navigation"><a href="about.html">about</a></div>
+                <div class="navigation"><a href="collection.html">collection</a></div>
+                <div class="navigation"><a href="contact.html">contact</a></div>
+                <div class="navigation"><a href="returns.html">returns</a></div>
+                <div class="navigation"><a href="privacy_policy.html">privacy policy</a></div>
+                <div class="navigation"><a href="terms.html">terms & conditions</a></div>
+            </div>
+            <div class="email_sign_up_container">
+                <div><input type="email" id="emailInput" placeholder="Email Address"></div>
+                <div><button id="signUpButton" onclick="sendEmail()">Sign Up</button></div>
+                <div id="footerMessageStatus" style="display: none; color: green;"></div>
+            </div>
+            <div>
+                <a href="https://www.facebook.com/people/Milward-Linens/61554012852743/"><button class="facebookLink">f</button></a>
+            </div>
+            
+        </div>
+        <div class="copyright_container">
+            <div><p class="copyright">© 2023 Milward Linens</p></div>
+        </div>
+    
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
